@@ -106,6 +106,7 @@ hourTable <- table(hourTable)
 
 ui <- dashboardPage(
   
+  # Create dashboard header + Sidebar menu + Body of dashboard
   
   dashboardHeader(title = "CS 424 Project 1"),
   
@@ -138,6 +139,8 @@ fluidRow(
     ))
   )))
 server <- function(input, output){
+  
+  # Use reactive function to grab subset of data to use when user selects a username or tag to look at
   
    userData <- reactive({subset(utility, utility$username == input$userNameInput | utility$newTags == input$TagInput)})
 
