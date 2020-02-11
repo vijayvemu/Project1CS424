@@ -164,7 +164,7 @@ server <- function(input, output){
     
   output$dayTable <- renderTable({    userData <- userData()
                                     table(userData$dayOfTheWeek)})
-  output$tagTable <-renderTable(topTenTags1)
+  output$tagTable <-renderTable(topTenTags)
   
   output$week<- renderPlot({
     userName <- userData()
